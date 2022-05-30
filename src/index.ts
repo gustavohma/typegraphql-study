@@ -2,7 +2,9 @@ import 'reflect-metadata';
 import { ApolloServer } from 'apollo-server-express';
 import express from 'express';
 import { buildSchema } from 'type-graphql';
+import { Container } from 'typedi';
 import { HelloResolver } from './resolvers/hello-resolver';
+import { UserResolver } from './resolvers/user-resolver';
 
 const PORT = process.env.PORT || 4000;
 
@@ -12,8 +14,9 @@ const bootstrap = async () => {
 
     const apolloServer = new ApolloServer({
       schema: await buildSchema({
-        resolvers: [HelloResolver],
+        resolvers: [HelloResolver, UserResolver],
         emitSchemaFile: true,
+        container: Container,
       }),
     });
 

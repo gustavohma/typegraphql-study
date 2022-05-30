@@ -7,7 +7,7 @@
 
 Projeto criado usando as seguintes tecnologias:
 
-## Tecnlogias usadas:
+## Tecnologias usadas:
 
 <p align="center">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="Typescript" height="70" />
