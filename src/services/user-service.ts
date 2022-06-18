@@ -24,4 +24,8 @@ export class UserService implements IDatabase<User> {
   delete(id: string): Promise<User | null> {
     return prisma.user.delete({ where: { id } });
   }
+
+  findByEmail(email: string): Promise<User | null> {
+    return prisma.user.findFirst({ where: { email } });
+  }
 }

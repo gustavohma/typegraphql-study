@@ -25,10 +25,10 @@ Instalar Dependências:
 
 ```bash
   npm install
-  yarn install
+  yarn
 ```
 
-Desenvolvimento:
+Executar - Desenvolvimento:
 
 ```bash
   npm run dev
@@ -52,6 +52,20 @@ Gerar commits (Padronização de Commits):
 ```bash
   npm run commit
   yarn commit
+```
+
+Prisma ORM Migrate:
+
+```bash
+  npm run prisma:mg [name]
+  yarn prisma:mg [name]
+```
+
+Prisma ORM Generate:
+
+```bash
+  npm run prisma:gen
+  yarn prisma:gen
 ```
 
 ## Autor:

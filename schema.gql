@@ -6,6 +6,11 @@
 input CreateUserInput {
   email: String!
   name: String
+  password: String!
+}
+
+type LoginResponse {
+  accessToken: String!
 }
 
 type Mutation {
@@ -16,18 +21,27 @@ type Mutation {
 
 type Query {
   hello: String!
+  login(email: String!, password: String!): LoginResponse!
   user(id: String!): User!
   users: [User!]!
+}
+
+enum Roles {
+  ADMIN
+  USER
 }
 
 input UpdateUserInput {
   email: String
   id: ID!
   name: String
+  password: String
 }
 
 type User {
   email: String!
   id: ID
   name: String
+  password: String!
+  roles: [Roles!]!
 }

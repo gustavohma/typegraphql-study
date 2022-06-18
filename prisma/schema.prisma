@@ -26,9 +26,11 @@ model Profile {
 }
 
 model User {
-  id      String   @id @default(uuid())
-  email   String   @unique
-  name    String?
-  posts   Post[]
-  profile Profile?
+  id       String   @id @default(uuid())
+  email    String   @unique
+  name     String?
+  password String
+  roles    String[]
+  posts    Post[]
+  profile  Profile?
 }

@@ -1,4 +1,4 @@
-# Internet Systems Consortium license
+ISC License
 
 Copyright (c) 2022, Gustavo Henrique
 
