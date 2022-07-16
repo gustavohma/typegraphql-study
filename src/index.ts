@@ -4,9 +4,6 @@ import { ApolloServer } from 'apollo-server-express';
 import express from 'express';
 import { buildSchema } from 'type-graphql';
 import { Container } from 'typedi';
-import { HelloResolver } from './resolvers/hello-resolver';
-import { UserResolver } from './resolvers/user-resolver';
-import { AuthResolver } from './resolvers/auth-resolver';
 import { customAuthChecker } from './auth/custom-auth-checker';
 
 const PORT = process.env.PORT || 4000;
@@ -18,7 +15,7 @@ const bootstrap = async () => {
 
     const apolloServer = new ApolloServer({
       schema: await buildSchema({
-        resolvers: [HelloResolver, UserResolver, AuthResolver],
+        resolvers: [__dirname + '/resolvers/**/*-resolver.{ts,js}'],
         emitSchemaFile: true,
         container: Container,
         authChecker: customAuthChecker,
